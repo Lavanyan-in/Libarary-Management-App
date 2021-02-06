@@ -1,0 +1,35 @@
+<div class="p-3">
+    <h1>Books Repository</h1>
+    <div class="pb-4 pt-3">
+        <form ng-submit="searchBook()">
+            <div class="form-group">
+                <label for="bookName" class="font-weight-bold">Book Name / Author</label>
+                <div class="col-sm-5 p-0">
+                    <input type="text" class="form-control" id="bookName" placeholder="Please enter book name / author" ng-model="bookAuthorName" ng-change="getBooks()">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" ng-disabled="!bookAuthorName">Search</button>
+        </form>
+    </div>
+    <div class="table-responsive pd5">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th width="8%">Sr No</th>
+                    <th>Book Name</th>
+                    <th>Author</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tr ng-repeat="book in books">
+                <td ng-bind="$index + 1" />
+                <td ng-bind="book.BookName" />
+                <td ng-bind="book.AuthorName" />
+                <td ng-bind="book.BookStatus" ng-class="book.BookStatus == 'Rented' ? 'text-danger' : 'text-success'" />
+            </tr>
+            <tr ng-if="books.length == 0">
+                <td colspan="4">No records found</td>
+            </tr>
+        </table>
+    </div>
+</div>

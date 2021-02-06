@@ -1,0 +1,17 @@
+{
+  "name": "angular",
+  "description": "",
+  "main": "",
+  "authors": [
+    "lavanyasimha8@outlook.com <lavanyasimha8@outlook.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/angular/angular-seed",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
